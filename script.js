@@ -66,3 +66,26 @@ function ovriresite(){
         return false;
     }
 }
+
+// تأكد من تحميل مكتبة EmailJS أولاً:
+// <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+// تهيئة EmailJS بمفتاحك العام
+emailjs.init("SZSCM_-vAGeSv6BWn"); // استبدل YOUR_PUBLIC_KEY بمفتاحك
+
+// الحصول على الفورم
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault(); // منع إعادة تحميل الصفحة
+
+    // إرسال البيانات عبر EmailJS
+    emailjs.sendForm("service_pe5le1b", "template_lnkqs6p", this)
+        .then(function(response) {
+            console.log("SUCCESS!", response.status, response.text);
+            alert(" le message a été envoyé succés . 👌");
+        }, function(error) {
+            console.error("FAILED...", error);
+            alert(" Une erreur s'est produite . 🚨");
+        });
+});
