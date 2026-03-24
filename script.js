@@ -86,6 +86,10 @@ form.addEventListener("submit", function(event) {
             alert(" le message a été envoyé succés . 👌");
         }, function(error) {
             console.error("FAILED...", error);
-            alert(" Une erreur s'est produite . 🚨");
+            alert(" Une erreur");
         });
 });
+
+function confirmSend() {
+    return confirm(" Êtes-vous sûr d’envoyer le message ?");
+}
