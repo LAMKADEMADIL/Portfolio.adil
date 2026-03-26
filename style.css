@@ -95,7 +95,7 @@ header nav ul li:hover {
     font-size: 18px;
   }
 }
-@media (min-width: 380px) {
+@media (min-width: 380px) and (max-width:500px)  {
   header {
     width: 100%;
     display: flex;
