@@ -1581,3 +1581,69 @@ body:has(button:hover) .cursor-follower {
 ::-webkit-scrollbar-track { background: var(--bg-primary); }
 ::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--purple-light); }
+
+/* ===== CUSTOM CONFIRM MODAL CSS ===== */
+.custom-confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 11, 20, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition);
+}
+.custom-confirm-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.custom-confirm-card {
+  width: 90%;
+  max-width: 400px;
+  padding: 32px;
+  text-align: center;
+  transform: scale(0.8);
+  transition: var(--transition);
+}
+.custom-confirm-overlay.active .custom-confirm-card {
+  transform: scale(1);
+}
+.confirm-icon-area {
+  width: 70px;
+  height: 70px;
+  background: rgba(139, 92, 246, 0.1);
+  border: 2px solid var(--purple);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: var(--purple-light);
+  box-shadow: var(--shadow-glow);
+}
+#confirm-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  font-family: var(--font-display);
+}
+#confirm-message {
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+  line-height: 1.5;
+  font-size: 1.05rem;
+}
+.confirm-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.confirm-actions .btn {
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  flex: 1;
+}

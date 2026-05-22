@@ -227,31 +227,69 @@ form.addEventListener("submit", function (event) {
     });
 });
 
-/* ===== CONFIRM FUNCTIONS ===== */
-function confirmSend() {
-  return confirm("Êtes-vous sûr d'envoyer le message ?");
+/* ===== CUSTOM CONFIRM MODAL LOGIC ===== */
+const confirmModal = document.getElementById("custom-confirm-modal");
+const confirmTitle = document.getElementById("confirm-title");
+const confirmMessage = document.getElementById("confirm-message");
+const confirmOkBtn = document.getElementById("confirm-ok-btn");
+const confirmCancelBtn = document.getElementById("confirm-cancel-btn");
+
+function showCustomConfirm(title, message) {
+  return new Promise((resolve) => {
+    confirmTitle.textContent = title;
+    confirmMessage.textContent = message;
+    confirmModal.classList.add("active");
+
+    const handleOk = () => {
+      confirmModal.classList.remove("active");
+      cleanup();
+      resolve(true);
+    };
+
+    const handleCancel = () => {
+      confirmModal.classList.remove("active");
+      cleanup();
+      resolve(false);
+    };
+
+    const cleanup = () => {
+      confirmOkBtn.removeEventListener("click", handleOk);
+      confirmCancelBtn.removeEventListener("click", handleCancel);
+    };
+
+    confirmOkBtn.addEventListener("click", handleOk);
+    confirmCancelBtn.addEventListener("click", handleCancel);
+  });
 }
-function downloadCV() {
-  return confirm("Voulez-vous télécharger le CV ?");
+
+// Update functions to handle async confirmation
+async function confirmSend() {
+  const result = await showCustomConfirm("Envoi de message", "Êtes-vous sûr d'envoyer le message ?");
+  if (result) {
+    // Manually trigger form submit if needed or handle in form listener
+    // For the button onclick, we should return false to stop native and handle manually
+  }
+  return result;
 }
-function openlinkdin() {
-  return confirm("Voulez-vous ouvrir mon profil LinkedIn ?");
+
+async function handleLinkClick(e, title, message) {
+  e.preventDefault();
+  const url = e.currentTarget.href;
+  const result = await showCustomConfirm(title, message);
+  if (result) {
+    window.open(url, "_blank");
+  }
 }
-function opengithub() {
-  return confirm("Voulez-vous ouvrir mon profil GitHub ?");
-}
-function opengit() {
-  return confirm("Voulez-vous ouvrir mon profil Git ?");
-}
-function openfacebook() {
-  return confirm("Voulez-vous ouvrir mon profil Facebook ?");
-}
-function openintagram() {
-  return confirm("Voulez-vous ouvrir mon profil Instagram ?");
-}
-function ovriresite() {
-  return confirm("Voulez-vous ouvrir mon site web Pepsi ?");
-}
+
+// Redirect functions
+function downloadCV(e) { handleLinkClick(e, "Téléchargement", "Voulez-vous télécharger le CV ?"); }
+function openlinkdin(e) { handleLinkClick(e, "LinkedIn", "Voulez-vous ouvrir mon profil LinkedIn ?"); }
+function opengithub(e) { handleLinkClick(e, "GitHub", "Voulez-vous ouvrir mon profil GitHub ?"); }
+function opengit(e) { handleLinkClick(e, "Git", "Voulez-vous ouvrir mon ملف Git ؟"); }
+function openfacebook(e) { handleLinkClick(e, "Facebook", "Voulez-vous ouvrir mon profil Facebook ?"); }
+function openintagram(e) { handleLinkClick(e, "Instagram", "Voulez-vous ouvrir mon profil Instagram ?"); }
+function ovriresite(e) { handleLinkClick(e, "Pepsi Site", "Voulez-vous ouvrir mon site web Pepsi ?"); }
+
 
 /* ===== SMOOTH HOVER TILT ON CARDS ===== */
 document.querySelectorAll(".glass-card").forEach(card => {
