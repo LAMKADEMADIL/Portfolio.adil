@@ -266,3 +266,18 @@ document.querySelectorAll(".glass-card").forEach(card => {
     card.style.transform = "";
   });
 });
+
+/* ===== THEME TOGGLE SYSTEM ===== */
+const themeToggle = document.getElementById("theme-toggle");
+const themes = ["dark", "light", "midnight"];
+let currentTheme = localStorage.getItem("theme") || "dark";
+document.body.setAttribute("data-theme", currentTheme);
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    let nextIndex = (themes.indexOf(currentTheme) + 1) % themes.length;
+    currentTheme = themes[nextIndex];
+    document.body.setAttribute("data-theme", currentTheme);
+    localStorage.setItem("theme", currentTheme);
+  });
+}
