@@ -38,7 +38,7 @@ function createParticles() {
       animation-duration: ${Math.random() * 15 + 10}s;
       animation-delay: ${Math.random() * 10}s;
       opacity: ${Math.random() * 0.5 + 0.1};
-      background: ${Math.random() > 0.5 ? "#8b5cf6" : "#3b82f6"};
+      background: ${Math.random() > 0.5 ? "#2563eb" : "#3b82f6"};
     `;
     container.appendChild(p);
   }

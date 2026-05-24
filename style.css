@@ -7,16 +7,16 @@
   --border: rgba(255, 255, 255, 0.08);
   --border-hover: rgba(139, 92, 246, 0.4);
 
-  --purple: #8b5cf6;
-  --purple-light: #a78bfa;
+  --primary: #2563eb;
+  --primary-light: #60a5fa;
   --blue: #3b82f6;
   --blue-light: #60a5fa;
-  --cyan: #06b6d4;
-  --pink: #ec4899;
+  --cyan: #0ea5e9;
+  --pink: #f43f5e;
 
-  --gradient: linear-gradient(135deg, #8b5cf6, #3b82f6);
-  --gradient-2: linear-gradient(135deg, #a78bfa, #60a5fa);
-  --gradient-glow: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(59, 130, 246, 0.3));
+  --gradient: linear-gradient(135deg, #2563eb, #0ea5e9);
+  --gradient-2: linear-gradient(135deg, #60a5fa, #38bdf8);
+  --gradient-glow: linear-gradient(135deg, rgba(37, 99, 235, 0.3), rgba(14, 165, 233, 0.3));
 
   --text-primary: #f1f5f9;
   --text-secondary: #94a3b8;
@@ -33,7 +33,7 @@
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.2);
+  --shadow-glow: 0 0 40px rgba(37, 99, 235, 0.2);
 
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -92,14 +92,14 @@ body {
 
 ::selection {
   background: rgba(139, 92, 246, 0.3);
-  color: var(--purple-light);
+  color: var(--primary-light);
 }
 
 /* ===== CUSTOM CURSOR ===== */
 .cursor {
   width: 10px;
   height: 10px;
-  background: var(--purple);
+  background: var(--primary);
   border-radius: 50%;
   position: fixed;
   top: 0; left: 0;
@@ -132,7 +132,7 @@ body:has(a:hover) .cursor-follower,
 body:has(button:hover) .cursor-follower {
   width: 50px;
   height: 50px;
-  border-color: var(--purple);
+  border-color: var(--primary);
 }
 
 /* ===== PARTICLES ===== */
@@ -149,7 +149,7 @@ body:has(button:hover) .cursor-follower {
   position: absolute;
   width: 2px;
   height: 2px;
-  background: var(--purple);
+  background: var(--primary);
   border-radius: 50%;
   opacity: 0;
   animation: float-particle linear infinite;
@@ -244,7 +244,7 @@ body:has(button:hover) .cursor-follower {
 }
 
 .nav-link.active {
-  color: var(--purple-light);
+  color: var(--primary-light);
 }
 
 /* ===== HAMBURGER ===== */
@@ -335,13 +335,13 @@ body:has(button:hover) .cursor-follower {
   display: inline-block;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--purple-light);
+  color: var(--primary-light);
   text-transform: uppercase;
   letter-spacing: 3px;
   margin-bottom: 16px;
   padding: 6px 18px;
-  background: rgba(139, 92, 246, 0.1);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.2);
   border-radius: 100px;
 }
 
@@ -402,7 +402,7 @@ body:has(button:hover) .cursor-follower {
 
 .btn-secondary:hover {
   border-color: var(--purple);
-  color: var(--purple-light);
+  color: var(--primary-light);
   transform: translateY(-2px);
 }
 
@@ -516,7 +516,7 @@ body:has(button:hover) .cursor-follower {
 }
 
 .home-title-dynamic {
-  color: var(--purple-light);
+  color: var(--primary-light);
   border-right: 2px solid var(--purple);
   padding-right: 4px;
   animation: blink 1s infinite;
@@ -536,7 +536,7 @@ body:has(button:hover) .cursor-follower {
 }
 
 .home-desc strong {
-  color: var(--purple-light);
+  color: var(--primary-light);
 }
 
 .home-actions {
@@ -566,9 +566,9 @@ body:has(button:hover) .cursor-follower {
 }
 
 .social-link:hover {
-  background: rgba(139, 92, 246, 0.1);
-  border-color: var(--purple);
-  color: var(--purple-light);
+  background: rgba(37, 99, 235, 0.1);
+  border-color: var(--primary);
+  color: var(--primary-light);
   transform: translateY(-3px);
 }
 
@@ -595,21 +595,21 @@ body:has(button:hover) .cursor-follower {
 
 .ring-1 {
   inset: -10px;
-  border-color: rgba(139, 92, 246, 0.4);
+  border-color: rgba(37, 99, 235, 0.4);
   animation: rotate 8s linear infinite;
 }
 
 .ring-2 {
   inset: -25px;
-  border-color: rgba(59, 130, 246, 0.2);
-  border-top-color: rgba(59, 130, 246, 0.6);
+  border-color: rgba(37, 99, 235, 0.2);
+  border-top-color: rgba(37, 99, 235, 0.6);
   animation: rotate 12s linear infinite reverse;
 }
 
 .ring-3 {
   inset: -42px;
-  border-color: rgba(139, 92, 246, 0.1);
-  border-right-color: rgba(139, 92, 246, 0.4);
+  border-color: rgba(37, 99, 235, 0.1);
+  border-right-color: rgba(37, 99, 235, 0.4);
   animation: rotate 18s linear infinite;
 }
 
@@ -622,8 +622,8 @@ body:has(button:hover) .cursor-follower {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid rgba(139, 92, 246, 0.5);
-  box-shadow: 0 0 60px rgba(139, 92, 246, 0.25);
+  border: 3px solid rgba(37, 99, 235, 0.5);
+  box-shadow: 0 0 60px rgba(37, 99, 235, 0.25);
   animation: float 4s ease-in-out infinite;
 }
 
@@ -812,14 +812,14 @@ body:has(button:hover) .cursor-follower {
 }
 
 .about-text strong {
-  color: var(--purple-light);
+  color: var(--primary-light);
 }
 
 .about-text h4 {
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--purple-light);
+  color: var(--primary-light);
   margin-bottom: 14px;
 }
 
@@ -830,10 +830,16 @@ body:has(button:hover) .cursor-follower {
   gap: 10px;
 }
 
+.badge-featured {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary-light);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
 .soft-skill-item {
   padding: 10px 14px;
-  background: rgba(139, 92, 246, 0.06);
-  border: 1px solid rgba(139, 92, 246, 0.12);
+  background: rgba(37, 99, 235, 0.06);
+  border: 1px solid rgba(37, 99, 235, 0.12);
   border-radius: var(--radius-sm);
   font-size: 0.875rem;
   color: var(--text-secondary);
@@ -876,7 +882,7 @@ body:has(button:hover) .cursor-follower {
 
 .native { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
 .intermediate { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
-.technical { background: rgba(139, 92, 246, 0.15); color: #a78bfa; }
+.technical { background: rgba(37, 99, 235, 0.15); color: var(--primary-light); }
 
 /* ===== EDUCATION ===== */
 .edu-items {
@@ -894,9 +900,9 @@ body:has(button:hover) .cursor-follower {
 .edu-year {
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--purple-light);
-  background: rgba(139, 92, 246, 0.1);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  color: var(--primary-light);
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.2);
   padding: 4px 10px;
   border-radius: var(--radius-sm);
   white-space: nowrap;
@@ -949,7 +955,7 @@ body:has(button:hover) .cursor-follower {
   height: 16px;
   border-radius: 50%;
   background: var(--gradient);
-  box-shadow: 0 0 16px rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 16px rgba(37, 99, 235, 0.5);
 }
 
 .timeline-content {
@@ -998,7 +1004,7 @@ body:has(button:hover) .cursor-follower {
 .timeline-project h4 {
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--purple-light);
+  color: var(--primary-light);
   margin-bottom: 16px;
   display: flex;
   align-items: center;
@@ -1039,17 +1045,17 @@ body:has(button:hover) .cursor-follower {
 
 .tech-tag {
   padding: 5px 12px;
-  background: rgba(139, 92, 246, 0.1);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.2);
   border-radius: var(--radius-sm);
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--purple-light);
+  color: var(--primary-light);
   transition: var(--transition);
 }
 
 .tech-tag:hover {
-  background: rgba(139, 92, 246, 0.2);
+  background: rgba(128, 128, 128, 0.15);
   transform: translateY(-2px);
 }
 
@@ -1111,7 +1117,7 @@ body:has(button:hover) .cursor-follower {
 
 .skill-percent {
   font-size: 0.8rem;
-  color: var(--purple-light);
+  color: var(--primary-light);
   font-weight: 600;
 }
 
@@ -1225,12 +1231,12 @@ body:has(button:hover) .cursor-follower {
 
 .badge-featured {
   padding: 4px 10px;
-  background: rgba(139, 92, 246, 0.2);
+  background: rgba(128, 128, 128, 0.15);
   border: 1px solid rgba(139, 92, 246, 0.3);
   border-radius: 100px;
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--purple-light);
+  color: var(--primary-light);
 }
 
 .badge-mobile {
@@ -1313,18 +1319,18 @@ body:has(button:hover) .cursor-follower {
   align-items: center;
   gap: 6px;
   padding: 8px 16px;
-  background: rgba(139, 92, 246, 0.1);
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.2);
   border-radius: var(--radius-sm);
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--purple-light);
+  color: var(--primary-light);
   text-decoration: none;
   transition: var(--transition);
 }
 
 .project-link:hover {
-  background: rgba(139, 92, 246, 0.2);
+  background: rgba(128, 128, 128, 0.15);
   transform: translateY(-2px);
 }
 
@@ -1493,7 +1499,7 @@ body:has(button:hover) .cursor-follower {
 }
 
 .footer-socials a:hover {
-  color: var(--purple-light);
+  color: var(--primary-light);
 }
 
 /* ===== BACK TO TOP ===== */
@@ -1614,14 +1620,14 @@ body:has(button:hover) .cursor-follower {
 .confirm-icon-area {
   width: 70px;
   height: 70px;
-  background: rgba(139, 92, 246, 0.1);
-  border: 2px solid var(--purple);
+  background: rgba(37, 99, 235, 0.1);
+  border: 2px solid var(--primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  color: var(--purple-light);
+  color: var(--primary-light);
   box-shadow: var(--shadow-glow);
 }
 #confirm-title {
