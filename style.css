@@ -1508,6 +1508,7 @@ section {
 .footer {
   padding: 40px 0;
   border-top: 1px solid var(--border);
+  background: var(--bg-primary);
 }
 
 .footer-inner {
@@ -1525,10 +1526,12 @@ section {
   font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 800;
+  color: var(--text-primary);
 }
 
 .footer-copy {
-  font-size: 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--text-muted);
 }
 
@@ -1538,7 +1541,11 @@ section {
 }
 
 .footer-socials a {
-  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--text-muted);
   text-decoration: none;
   transition: var(--transition);
