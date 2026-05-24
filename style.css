@@ -75,7 +75,19 @@ body[data-theme="midnight"] {
 }
 
 body {
-  transition: background-color 0.5s ease, color 0.5s ease;
+  font-family: var(--font-main);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+  cursor: none;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
 }
 
 *, *::before, *::after {
@@ -574,9 +586,6 @@ section {
 }
 
 .home-desc {
-  font-size: 1.2rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
   margin-bottom: 36px;
   max-width: 520px;
 }
@@ -852,9 +861,6 @@ section {
 }
 
 .about-text p {
-  color: var(--text-secondary);
-  font-size: 1.15rem;
-  line-height: 1.8;
 }
 
 .about-text strong {
