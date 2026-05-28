@@ -1891,6 +1891,11 @@ section {
     -webkit-backdrop-filter: none !important;
   }
   
+  /* Disable CSS particles on mobile (Frequent cause of VRAM static noise) */
+  .particles {
+    display: none !important;
+  }
+  
   /* Make backgrounds a bit more solid since blur is removed */
   #header.scrolled, #nav-menu {
     background: var(--bg-primary) !important;
