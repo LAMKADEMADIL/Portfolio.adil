@@ -768,9 +768,9 @@ section {
 /* ===== ABOUT SECTION ===== */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1.2fr 0.8fr; /* Text gets more space, image wrap is narrower */
   gap: 60px;
-  align-items: stretch; /* هذا سيجعل عمود النص والصورة بنفس الطول */
+  align-items: center; /* better than stretch which forces height */
 }
 
 .about-image-wrap {
@@ -783,11 +783,13 @@ section {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
+  max-width: 450px; /* maximum width so it doesn't become colossal */
+  margin: 0 auto; /* center in the column if needed */
 }
 
 .about-img {
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 4/5; /* A portrait/slight-square aspect, looks elegant for person */
   object-fit: cover;
   border-radius: var(--radius-lg);
   filter: grayscale(20%);
@@ -1613,7 +1615,7 @@ section {
   .section-home { padding: 100px 40px 60px; }
   .home-content { gap: 50px; }
   .image-ring { width: 300px; height: 300px; }
-  .about-grid { grid-template-columns: 1fr 1.2fr; gap: 40px; }
+  .about-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
 
 /* ===== 1024px ===== */
