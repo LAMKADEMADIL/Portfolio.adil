@@ -83,7 +83,6 @@ body {
   color: var(--text-primary);
   overflow-x: hidden;
   line-height: 1.6;
-  cursor: none;
 }
 
 p {
@@ -109,45 +108,7 @@ html, body {
   color: var(--primary-light);
 }
 
-/* ===== CUSTOM CURSOR ===== */
-.cursor {
-  width: 10px;
-  height: 10px;
-  background: var(--primary);
-  border-radius: 50%;
-  position: fixed;
-  top: 0; left: 0;
-  pointer-events: none;
-  z-index: 100002;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
-}
 
-.cursor-follower {
-  width: 36px;
-  height: 36px;
-  border: 2px solid var(--primary);
-  border-radius: 50%;
-  position: fixed;
-  top: 0; left: 0;
-  pointer-events: none;
-  z-index: 100001;
-  transform: translate(-50%, -50%);
-  transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
-}
-
-body:has(a:hover) .cursor,
-body:has(button:hover) .cursor {
-  width: 16px;
-  height: 16px;
-}
-
-body:has(a:hover) .cursor-follower,
-body:has(button:hover) .cursor-follower {
-  width: 50px;
-  height: 50px;
-  border-color: var(--primary);
-}
 
 /* ===== PARTICLES ===== */
 .particles {
@@ -224,7 +185,7 @@ body[data-theme="light"] #header.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: none;
+  cursor: pointer;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
@@ -311,7 +272,7 @@ body[data-theme="light"] #header.scrolled {
   gap: 5px;
   background: none;
   border: none;
-  cursor: none;
+  cursor: pointer;
   padding: 8px;
 }
 
@@ -425,7 +386,7 @@ section {
   font-weight: 600;
   text-decoration: none;
   transition: var(--transition);
-  cursor: none;
+  cursor: pointer;
   border: none;
   position: relative;
   overflow: hidden;
@@ -1579,7 +1540,7 @@ section {
   align-items: center;
   justify-content: center;
   color: white;
-  cursor: none;
+  cursor: pointer;
   box-shadow: 0 8px 24px rgba(139, 92, 246, 0.4);
   transition: var(--transition);
   z-index: 1000;

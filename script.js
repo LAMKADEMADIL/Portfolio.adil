@@ -1,29 +1,6 @@
 /* ===== EMAILJS INIT ===== */
 emailjs.init("SZSCM_-vAGeSv6BWn");
 
-/* ===== CURSOR ===== */
-const cursor = document.getElementById("cursor");
-const cursorFollower = document.getElementById("cursor-follower");
-
-let mouseX = 0, mouseY = 0;
-let followerX = 0, followerY = 0;
-
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursor.style.left = mouseX + "px";
-  cursor.style.top = mouseY + "px";
-});
-
-function animateCursor() {
-  followerX += (mouseX - followerX) * 0.12;
-  followerY += (mouseY - followerY) * 0.12;
-  cursorFollower.style.left = followerX + "px";
-  cursorFollower.style.top = followerY + "px";
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
 /* ===== PARTICLES ===== */
 function createParticles() {
   const container = document.getElementById("particles");
